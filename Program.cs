@@ -9,32 +9,56 @@ namespace EmployeeWage
             Console.WriteLine("Welcome to Employee\r\nWage Computation\r\nProgram\n");
 
            Random rnd = new Random();
-            int check = rnd.Next(0,3);
-            
+           
+
             int perHour = 20;
             int fullDay = 8;
-            int dailyWage = 0;
+            int totalWage = 0;
             int halfDay = 4;
-            switch (check)
+            int day = 1;
+            int present = 0;
+            int halfDayPresent = 0;
+            int fullDayPresent = 0;
+            int absent = 0;
+            int totalday = 1;
+            
+            while (day <= 20 && totalday<=30)
             {
-                case 0:
-                        Console.WriteLine("Employee is absent ");
-                    break;
+           int check = rnd.Next(0, 3);
 
-                case 1:
-                        dailyWage = perHour * halfDay;
-                        Console.WriteLine("Employee is present for Half day");
-                        Console.WriteLine("Employee's daily wage is " + dailyWage);
-                    break;
+                switch (check)
+                {
+                    case 0:
+                        absent++;
+                        totalday++;
+                        break;
 
-                case 2:
-                        dailyWage = perHour * fullDay;
-                        Console.WriteLine("Employee is present for full day");
-                        Console.WriteLine("Employee's daily wage is " + dailyWage);
-                    break;
+                    case 1:
+                        totalWage = totalWage+ perHour * halfDay;
+                        totalday++; 
+                        present++;
+                        fullDayPresent++;
+                        day++;
+                        break;
+                        
+
+                    case 2:
+                        totalWage =totalWage+ perHour * fullDay;
+                        totalday++;
+                        present++;
+                        halfDayPresent++;
+                        day++;
+                        break;
+                }
+              
+
             }
+            Console.WriteLine("Employee is absent in a month - " + absent);
 
-        
+            Console.WriteLine("Employee is present for full day in a month - " + fullDayPresent);
+            Console.WriteLine("Employee is present for half day in a month - " + halfDayPresent);
+            Console.WriteLine("Total present - " +present);
+            Console.WriteLine("Employee's daily wage is - " + totalWage);
         }
     }
 }
