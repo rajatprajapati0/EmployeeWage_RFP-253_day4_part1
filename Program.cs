@@ -9,23 +9,30 @@ namespace EmployeeWage
             Console.WriteLine("Welcome to Employee\r\nWage Computation\r\nProgram\n");
 
            Random rnd = new Random();
-            int check = rnd.Next(0,2);
+            int check = rnd.Next(0,3);
             
             int perHour = 20;
             int fullDay = 8;
             int dailyWage = 0;
-
-            if (check == 0) 
+            int halfDay = 4;
+            if (check == 0)
             {
                 Console.WriteLine("Employee is absent ");
 
             }
-            else 
+            else if (check==1) 
             {
-                dailyWage = perHour * fullDay;   
+                dailyWage = perHour * halfDay;
+               Console.WriteLine("Employee is present for Half day");
+                Console.WriteLine("Employee's dailywage is " + dailyWage);
+            }
 
-                Console.WriteLine("Employee is present ");
-                Console.WriteLine("Employee's dailywage is "+dailyWage);
+            else
+            {
+                dailyWage = perHour * fullDay;
+
+                Console.WriteLine("Employee is present for full day");
+                Console.WriteLine("Employee's dailywage is " + dailyWage);
             }
 
         
