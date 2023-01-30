@@ -11,7 +11,7 @@ namespace EmployeeWage
            Random rnd = new Random();
            
 
-            int perHour = 20;
+            int perHourWage = 20;
             int fullDay = 8;
             int totalWage = 0;
             int halfDay = 4;
@@ -21,8 +21,9 @@ namespace EmployeeWage
             int fullDayPresent = 0;
             int absent = 0;
             int totalday = 1;
+            int totalHour = 0; 
             
-            while (day <= 20 && totalday<=30)
+            while (day <= 20 && totalday<=30 && totalHour!=100)
             {
            int check = rnd.Next(0, 3);
 
@@ -34,7 +35,8 @@ namespace EmployeeWage
                         break;
 
                     case 1:
-                        totalWage = totalWage+ perHour * halfDay;
+                        totalWage = totalWage+ perHourWage * halfDay;
+                        totalHour = totalHour + halfDay;
                         totalday++; 
                         present++;
                         fullDayPresent++;
@@ -43,7 +45,8 @@ namespace EmployeeWage
                         
 
                     case 2:
-                        totalWage =totalWage+ perHour * fullDay;
+                        totalWage =totalWage+ perHourWage * fullDay;
+                        totalHour = totalHour + fullDay;
                         totalday++;
                         present++;
                         halfDayPresent++;
@@ -58,7 +61,9 @@ namespace EmployeeWage
             Console.WriteLine("Employee is present for full day in a month - " + fullDayPresent);
             Console.WriteLine("Employee is present for half day in a month - " + halfDayPresent);
             Console.WriteLine("Total present - " +present);
+            Console.WriteLine("Total Hour worked by Employee in month - "+totalHour+" Hour");
             Console.WriteLine("Employee's monthly wage is - " + totalWage);
+        
         }
     }
 }
