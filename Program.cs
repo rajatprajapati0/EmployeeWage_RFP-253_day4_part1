@@ -15,24 +15,23 @@ namespace EmployeeWage
             int fullDay = 8;
             int dailyWage = 0;
             int halfDay = 4;
-            if (check == 0)
+            switch (check)
             {
-                Console.WriteLine("Employee is absent ");
+                case 0:
+                        Console.WriteLine("Employee is absent ");
+                    break;
 
-            }
-            else if (check==1) 
-            {
-                dailyWage = perHour * halfDay;
-               Console.WriteLine("Employee is present for Half day");
-                Console.WriteLine("Employee's dailywage is " + dailyWage);
-            }
+                case 1:
+                        dailyWage = perHour * halfDay;
+                        Console.WriteLine("Employee is present for Half day");
+                        Console.WriteLine("Employee's daily wage is " + dailyWage);
+                    break;
 
-            else
-            {
-                dailyWage = perHour * fullDay;
-
-                Console.WriteLine("Employee is present for full day");
-                Console.WriteLine("Employee's dailywage is " + dailyWage);
+                case 2:
+                        dailyWage = perHour * fullDay;
+                        Console.WriteLine("Employee is present for full day");
+                        Console.WriteLine("Employee's daily wage is " + dailyWage);
+                    break;
             }
 
         
