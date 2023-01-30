@@ -58,7 +58,7 @@ namespace EmployeeWage
             Console.WriteLine("Employee is present for full day in a month - " + fullDayPresent);
             Console.WriteLine("Employee is present for half day in a month - " + halfDayPresent);
             Console.WriteLine("Total present - " +present);
-            Console.WriteLine("Employee's daily wage is - " + totalWage);
+            Console.WriteLine("Employee's monthly wage is - " + totalWage);
         }
     }
 }
